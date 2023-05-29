@@ -6,7 +6,7 @@
     {
       "id": "stage_1",
       "title": "No configuration",
-      "description": "This app will take all functions in the installation where meta key `schneider.point_id` and format incomming values on MQTT by adding the value to the JSON payload. The new formatted messages are publishg on a subtopic for Schneider."
+      "description": "This app will take all functions in the installation where meta key `schneider.point_id` and format incomming values on MQTT by adding the value to the JSON payload. The new formatted messages are publishg on a subtopic for Schneider.",
       "input_fields": [
       ]
     }
