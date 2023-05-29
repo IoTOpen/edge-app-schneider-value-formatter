@@ -1,0 +1,16 @@
+{
+  "category": "message-formatter",
+  "description": "",
+  "name": "Schneider message formatter",
+  "public": true,
+  "publisher": {
+    "id": 1
+  },
+  "short_description": "Reformat values to Schneider messages on MQTT",
+  "source_url": "https://github.com/IoTOpen/edge-app-schneider-formatter",
+  "tags": [
+    "formatter",
+    "schneider",
+    "translator"
+  ]
+}
