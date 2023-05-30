@@ -8,9 +8,10 @@ function handleMessage(topic, payload, retained)
 
     local data = json:decode(payload)
     local pointId = fun.meta["schneider.point_id"]
+    local buildingId = fun.meta["schneider.building_id"]
     data.pointid = pointId
 
-    local pubTopic = "obj/schneider/" .. pointId .. "/" .. fun.type
+    local pubTopic = "obj/schneider/" .. buildingId .. "/" .. fun.type
     local pubData = json:encode(data)
     mq:pub(pubTopic, pubData, false, 0)
 end
@@ -20,7 +21,7 @@ function onFunctionsUpdated()
         mq:unsub(topic)
     end
     topicMap = {}
-    local funs = edge.findFunctions({ ["schneider.point_id"] = "*" })
+    local funs = edge.findFunctions({ ["schneider.point_id"] = "*", ["schneider.building_id"] = "*" })
     for _, fun in ipairs(funs) do
         for k, v in pairs(fun.meta) do
             if k:sub(1, #"topic_read") == "topic_read" then
